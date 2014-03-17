@@ -17,13 +17,13 @@ long long timeInMilliseconds(void) {
 int main(int argc, char *argv[])
 {
 	light_lock_t lock = LIGHT_LOCK_INIT;
-  pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+	pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
 	long long ms;
 	ms = timeInMilliseconds();
 
-  register int i = 500000000;
-  long long num = 0;
+	register int i = 500000000;
+	long long num = 0;
 
 	while(i--)
 	{
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 
 	ms = timeInMilliseconds() - ms;
 	if(ms > 0)
-		printf("light_lock/unlock: %lld ops/sec\n", (sayi * 1000)/ms);
+		printf("\033[0;35m" "light_lock/unlock: %lld ops/sec\n" "\033[0;0m", (sayi * 1000)/ms);
 
 
 	// PTHREAD
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 
 	ms = timeInMilliseconds() - ms;
 	if(ms > 0)
-		printf("pthread_mutex_lock/unlock: %lld ops/sec\n", (num * 1000)/ms);
+		printf("\033[0;35m" "pthread_mutex_lock/unlock: %lld ops/sec\n" "\033[0;0m", (num * 1000)/ms);
 
 	return 0;
 }
