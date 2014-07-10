@@ -30,6 +30,8 @@
 #ifndef __X86_MT_UTILS_H__
 #define __X86_MT_UTILS_H__
 
+#include <sched.h>
+
 static inline void xchg_swap32(uint32_t *target, uint32_t *value)
 {
 	__asm__ __volatile__ (
