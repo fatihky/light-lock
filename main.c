@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <sched.h>
 #include <stdint.h>
 
 #include <uv.h>
